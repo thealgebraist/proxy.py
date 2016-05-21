@@ -8,6 +8,14 @@ import logging
 import select
 from socket import *
 
+VERSION = (0, 2)
+__version__ = '.'.join(map(str, VERSION[0:2]))
+__description__ = 'HTTP Proxy Server in Python'
+__author__ = 'Abhinav Singh'
+__author_email__ = 'mailsforabhinav@gmail.com'
+__homepage__ = 'https://github.com/abhinavsingh/proxy.py'
+__license__ = 'BSD'
+
 logger = logging.getLogger(__name__)
 
 PY3 = sys.version_info[0] == 3

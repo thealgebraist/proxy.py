@@ -6,3 +6,7 @@
 cover
 dist
 proxy.py.egg-info
+
+build/lib/proxy.py
+
+build/scripts-2.7/proxy.py
