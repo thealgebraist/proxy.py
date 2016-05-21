@@ -1,3 +1,5 @@
+from connection import *
+
 class Server(Connection):
     """Establish connection to destination server."""
 

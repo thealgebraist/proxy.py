@@ -1,3 +1,5 @@
+from connection import *
+
 class Client(Connection):
     """Accepted client connection."""
 

@@ -1,4 +1,5 @@
 from tcp import *
+from proxy import *
 
 class HTTP(TCP):
     """HTTP proxy server implementation.

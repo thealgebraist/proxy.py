@@ -1,3 +1,38 @@
+import multiprocessing
+import datetime
+from http_parser import *
+from proxy_connection_failed import *
+from server import *
+import sys
+import logging
+import select
+from socket import *
+
+logger = logging.getLogger(__name__)
+
+PY3 = sys.version_info[0] == 3
+
+if PY3:
+    text_type = str
+    binary_type = bytes
+    from urllib import parse as urlparse
+else:
+    text_type = unicode
+    binary_type = str
+    import urlparse
+
+def bytes_(s, encoding='utf-8', errors='strict'):
+    """ If ``s`` is an instance of ``text_type``, return
+    ``s.encode(encoding, errors)``, otherwise return ``s``"""
+    if isinstance(s, text_type):  # pragma: no cover
+        return s.encode(encoding, errors)
+    return s
+
+VERSION = (0, 2)
+__version__ = '.'.join(map(str, VERSION[0:2]))
+
+version = bytes_(__version__)
+
 class Proxy(multiprocessing.Process):
     """HTTP proxy implementation.
 

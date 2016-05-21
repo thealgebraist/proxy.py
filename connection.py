@@ -1,3 +1,7 @@
+import logging
+
+logger = logging.getLogger(__name__)
+
 class Connection(object):
     """TCP server/client connection abstraction."""
 
