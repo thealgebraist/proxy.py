@@ -1,4 +1,5 @@
 from connection import *
+import socket
 
 class Server(Connection):
     """Establish connection to destination server."""

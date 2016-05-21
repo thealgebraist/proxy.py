@@ -1,4 +1,5 @@
 import urlparse
+from chunk_parser import *
 
 CRLF, COLON, SP = b'\r\n', b':', b' '
 
