@@ -16,7 +16,7 @@ To install proxy.py, simply:
 
 	$ pip install proxy_commandline.py
 
-This will add `proxy.py` inside your python bin folder.
+This will add the proxy to your python bin folder.
 
 Usage
 -----
