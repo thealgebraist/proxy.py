@@ -6,7 +6,6 @@ Lightweight HTTP Proxy Server in Python.
 Features
 --------
 
-- Distributed as a single file module
 - No dependency other than the Python standard library
 - Support for http, https, websockets request proxy
 
@@ -15,7 +14,7 @@ Install
 
 To install proxy.py, simply:
 
-	$ pip install proxy.py
+	$ pip install proxy_commandline.py
 
 This will add `proxy.py` inside your python bin folder.
 
@@ -36,6 +35,4 @@ optional arguments:
   --log-level LOG_LEVEL
                         DEBUG, INFO, WARNING, ERROR, CRITICAL
 
-Having difficulty using proxy.py? Report at:
-https://github.com/abhinavsingh/proxy.py/issues/new
 ```
