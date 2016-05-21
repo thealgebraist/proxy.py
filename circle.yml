@@ -1,0 +1,16 @@
+machine:
+
+  timezone:
+    Europe/Copenhagen
+
+dependencies:
+  pre:
+    - python -m proxy
+
+test:
+    # pre:
+    #     - echo pre
+    # override:
+    #     - echo override
+    post:
+        - echo post

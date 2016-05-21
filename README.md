@@ -12,7 +12,7 @@ Features
 Install
 -------
 
-To install proxy.py, simply:
+To install, simply:
 
 	$ pip install proxy_commandline.py
 
