@@ -5,7 +5,10 @@ machine:
 
 dependencies:
   pre:
+    - sudo apt-get install pylint
+    - pylint *.py
     - python -m proxy
+
 
 test:
     # pre:
