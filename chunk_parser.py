@@ -1,3 +1,13 @@
+# from httpparser import
+import httpparser as HttpParser
+import sys
+
+CRLF, COLON, SP = b'\r\n', b':', b' '
+
+CHUNK_PARSER_STATE_WAITING_FOR_SIZE = 1
+CHUNK_PARSER_STATE_WAITING_FOR_DATA = 2
+CHUNK_PARSER_STATE_COMPLETE = 3
+
 class ChunkParser(object):
     """HTTP chunked encoding response parser."""
 
@@ -13,7 +23,7 @@ class ChunkParser(object):
 
     def process(self, data):
         if self.state == CHUNK_PARSER_STATE_WAITING_FOR_SIZE:
-            line, data = HttpParser.split(data)
+            line, data = self.split(data)
             self.size = int(line, 16)
             self.state = CHUNK_PARSER_STATE_WAITING_FOR_DATA
         elif self.state == CHUNK_PARSER_STATE_WAITING_FOR_DATA:
@@ -30,3 +40,10 @@ class ChunkParser(object):
                 self.chunk = b''
                 self.size = None
         return len(data) > 0, data
+
+    def split(self, data):
+        pos = data.find(CRLF)
+        if pos == -1: return False, data
+        line = data[:pos]
+        data = data[pos+len(CRLF):]
+        return line, data

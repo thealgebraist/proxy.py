@@ -69,7 +69,7 @@ class HttpParser(object):
 
             return False, b''
 
-        line, data = HttpParser.split(data)
+        line, data = self.split(data)
         if line == False: return line, data
 
         if self.state < HTTP_PARSER_STATE_LINE_RCVD:
@@ -142,8 +142,7 @@ class HttpParser(object):
 
         return req
 
-    @staticmethod
-    def split(data):
+    def split(self, data):
         pos = data.find(CRLF)
         if pos == -1: return False, data
         line = data[:pos]

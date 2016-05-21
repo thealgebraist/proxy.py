@@ -1,6 +1,6 @@
 import multiprocessing
 import datetime
-from http_parser import *
+from httpparser import *
 from proxy_connection_failed import *
 from server import *
 import sys
